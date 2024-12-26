@@ -33,33 +33,33 @@ class AdvancedSettingTiles extends HookConsumerWidget {
         //     await const GeoAssetsRoute().push(context);
         //   },
         // ),
-        if (Platform.isAndroid) ...[
-          ListTile(
-            title: Text(t.settings.network.perAppProxyPageTitle),
-            leading: const Icon(FluentIcons.apps_list_detail_24_regular),
-            trailing: Switch(
-              value: perAppProxy,
-              onChanged: (value) async {
-                final newMode =
-                    perAppProxy ? PerAppProxyMode.off : PerAppProxyMode.exclude;
-                await ref
-                    .read(Preferences.perAppProxyMode.notifier)
-                    .update(newMode);
-                if (!perAppProxy && context.mounted) {
-                  await const PerAppProxyRoute().push(context);
-                }
-              },
-            ),
-            onTap: () async {
-              if (!perAppProxy) {
-                await ref
-                    .read(Preferences.perAppProxyMode.notifier)
-                    .update(PerAppProxyMode.exclude);
-              }
-              if (context.mounted) await const PerAppProxyRoute().push(context);
-            },
-          ),
-        ],
+        // if (Platform.isAndroid) ...[
+        //   ListTile(
+        //     title: Text(t.settings.network.perAppProxyPageTitle),
+        //     leading: const Icon(FluentIcons.apps_list_detail_24_regular),
+        //     trailing: Switch(
+        //       value: perAppProxy,
+        //       onChanged: (value) async {
+        //         final newMode =
+        //             perAppProxy ? PerAppProxyMode.off : PerAppProxyMode.exclude;
+        //         await ref
+        //             .read(Preferences.perAppProxyMode.notifier)
+        //             .update(newMode);
+        //         if (!perAppProxy && context.mounted) {
+        //           await const PerAppProxyRoute().push(context);
+        //         }
+        //       },
+        //     ),
+        //     onTap: () async {
+        //       if (!perAppProxy) {
+        //         await ref
+        //             .read(Preferences.perAppProxyMode.notifier)
+        //             .update(PerAppProxyMode.exclude);
+        //       }
+        //       if (context.mounted) await const PerAppProxyRoute().push(context);
+        //     },
+        //   ),
+        // ],
         SwitchListTile(
           title: Text(t.settings.advanced.memoryLimit),
           subtitle: Text(t.settings.advanced.memoryLimitMsg),

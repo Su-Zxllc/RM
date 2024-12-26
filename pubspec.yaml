@@ -1,7 +1,7 @@
 name: reaeeman
 description: Cross Platform Multi Protocol Proxy Frontend.
 publish_to: "none"
-version: 1.0.0+5
+version: 1.0.0+9
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
